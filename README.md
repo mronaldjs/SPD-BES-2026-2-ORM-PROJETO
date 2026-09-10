@@ -10,7 +10,6 @@ Marcello Ronald - 202302618
 
 ## Descrição da atividade 
 > Baseado nos tutoriais e slides da aula, forneça um repositório Git com os seguintes artefatos inspirados em um potencial projeto do seu grupo:
-
 > 1. Diagrama das classes: envolva entidades que tenham pelo menos as relações 1:N, 1:1 e N:M. O artefato deve ser criado em PlantUML. Apresente a imagem e o código-fonte puml.
 > 2. Diagrama E-R: mapeamento das classes em tabelas (ORM).
 > 3. Camada de persistência: código-fonte das classes mapeadas em tabelas, conforme a modelagem realizada nos diagramas;
@@ -32,8 +31,8 @@ Marcello Ronald - 202302618
 > 1:1 : ordemService - notaFiscal
 > N:M : Mecanico - ordemServico
 
-![Diagrama Classes](docs\diagrams\diagramClass.png)
+![Diagrama Classes](https://github.com/mronaldjs/SPD-BES-2026-2-ORM-PROJETO/blob/main/docs/diagrams/Classes/diagramClass.png)
 
 ### Diagrama Entidade Relacionamento
 
-![Diagrama Entidade Relacionamento](docs\diagrams\ER\diagramER.png)
+![Diagrama Entidade Relacionamento](https://github.com/mronaldjs/SPD-BES-2026-2-ORM-PROJETO/blob/main/docs/diagrams/ER/diagramER.png)
