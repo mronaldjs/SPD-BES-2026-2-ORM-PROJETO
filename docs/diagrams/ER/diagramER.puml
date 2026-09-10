@@ -1,0 +1,86 @@
+@startuml
+!define PK(x) <b><color:red>x</color></b>
+!define FK(x) <color:blue>x</color>
+
+title Diagrama ER - Oficina Mecânica Completo
+
+entity cliente {
+    PK(id) : BIGINT
+    nome : VARCHAR(100)
+    cpf_cnpj : VARCHAR(20)
+    endereco : VARCHAR(255)
+    cep : VARCHAR(10)
+    numero : VARCHAR(10)
+    complemento : VARCHAR(100)
+}
+
+entity veiculo {
+    PK(id) : BIGINT
+    placa : VARCHAR(10)
+    modelo : VARCHAR(50)
+    ano_modelo : INTEGER
+    FK(cliente_id) : BIGINT
+}
+
+entity ordem_servico {
+    PK(id) : BIGINT
+    data_emissao : DATE
+    valor_total : DOUBLE
+    FK(veiculo_id) : BIGINT
+}
+
+entity nota_fiscal {
+    PK(id) : BIGINT
+    numero : VARCHAR(20)
+    chave_acesso : VARCHAR(44)
+    data_emissao : DATE
+    valor_imposto : DOUBLE
+    FK(ordem_id) : BIGINT
+}
+
+entity mecanico {
+    PK(id) : BIGINT
+    nome : VARCHAR(100)
+}
+
+entity ordem_mecanico {
+    FK(ordem_id) : BIGINT
+    FK(mecanico_id) : BIGINT
+}
+
+entity servico {
+    PK(id) : BIGINT
+    descricao : VARCHAR(150)
+    valor : DOUBLE
+}
+
+entity item_servico {
+    PK(id) : BIGINT
+    quantidade : INTEGER
+    FK(ordem_id) : BIGINT
+    FK(servico_id) : BIGINT
+}
+
+entity peca {
+    PK(id) : BIGINT
+    nome : VARCHAR(100)
+    preco_unitario : DOUBLE
+}
+
+entity item_peca {
+    PK(id) : BIGINT
+    quantidade : INTEGER
+    FK(ordem_id) : BIGINT
+    FK(peca_id) : BIGINT
+}
+
+cliente ||--o{ veiculo : "1:N"
+veiculo ||--o{ ordem_servico : "1:N"
+ordem_servico ||--o| nota_fiscal : "1:1"
+ordem_servico ||--o{ ordem_mecanico : "N:M"
+mecanico ||--o{ ordem_mecanico : "N:M"
+ordem_servico ||--o{ item_servico : "1:N"
+servico ||--o{ item_servico : "1:N"
+ordem_servico ||--o{ item_peca : "1:N"
+peca ||--o{ item_peca : "1:N"
+@enduml

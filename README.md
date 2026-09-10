@@ -1,6 +1,13 @@
 # SPD-BES-2026-2-ORM-PROJETO
 Repositório Git com os seguintes artefatos inspirados em um potencial projeto do seu grupo
 
+## Grupo
+
+Nicole - 202302625
+Victor Gabriel - 202302631
+Matheus Augusto - 202305532
+Marcello Ronald - 202302618
+
 ## Descrição da atividade 
 > Baseado nos tutoriais e slides da aula, forneça um repositório Git com os seguintes artefatos inspirados em um potencial projeto do seu grupo:
 
@@ -22,7 +29,11 @@ Repositório Git com os seguintes artefatos inspirados em um potencial projeto d
 #### Entidades Exemplos
 
 > 1:N : Cliente - Veiculo
-> 1:1 : 
+> 1:1 : ordemService - notaFiscal
 > N:M : Mecanico - ordemServico
 
 ![Diagrama Classes](docs\diagrams\diagramClass.png)
+
+### Diagrama Entidade Relacionamento
+
+![Diagrama Entidade Relacionamento](docs\diagrams\ER\diagramER.png)
