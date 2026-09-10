@@ -3,6 +3,7 @@ Repositório Git com os seguintes artefatos inspirados em um potencial projeto d
 
 ## Descrição da atividade 
 > Baseado nos tutoriais e slides da aula, forneça um repositório Git com os seguintes artefatos inspirados em um potencial projeto do seu grupo:
+
 > 1. Diagrama das classes: envolva entidades que tenham pelo menos as relações 1:N, 1:1 e N:M. O artefato deve ser criado em PlantUML. Apresente a imagem e o código-fonte puml.
 > 2. Diagrama E-R: mapeamento das classes em tabelas (ORM).
 > 3. Camada de persistência: código-fonte das classes mapeadas em tabelas, conforme a modelagem realizada nos diagramas;
@@ -12,7 +13,16 @@ Repositório Git com os seguintes artefatos inspirados em um potencial projeto d
 
 ---
 
-### DOMÍNIO - OFICINA MECÂNICA
+# DOMÍNIO - OFICINA MECÂNICA
 
-### LINGUAGEM - JAVA
+## LINGUAGEM - JAVA
 
+### Diagrama de classes
+
+#### Entidades Exemplos
+
+> 1:N : Cliente - Veiculo
+> 1:1 : 
+> N:M : Mecanico - ordemServico
+
+![Diagrama Classes](docs\diagrams\diagramClass.png)

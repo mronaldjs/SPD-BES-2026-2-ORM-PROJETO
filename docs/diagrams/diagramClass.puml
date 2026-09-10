@@ -53,10 +53,18 @@ class ItemPeca {
     - ordemServico: OrdemServico
 }
 
+class NotaFiscal {
+    - id: Long
+    - numero: String
+    - chaveAcesso: String
+    - dataEmissao: LocalDate
+    - valorImposto: Double
+}
+
 class ItemServico {
     - id: Long
     - quantidade: Integer
-    - peca: Peca
+    - servico: Servico
     - ordemServico: OrdemServico
 }
 
@@ -67,6 +75,7 @@ OrdemServico "0..*" -- "1..*" Mecanico : executada por >
 OrdemServico "0..*" -- "1..*" Servico : inclui >
 OrdemServico "1" -- "0..*" ItemPeca : contem >
 Peca "1" -- "0..*" ItemPeca : registrada em >
+OrdemServico "1" -- "0..1" NotaFiscal : gera >
 OrdemServico "1" -- "0..*" ItemServico : contem >
 Servico "1" -- "0..*" ItemServico : registrada em >
 
