@@ -1,0 +1,73 @@
+@startuml
+title Diagrama de Classes - Oficina Mecânica (com Peças e Serviços)
+
+class Cliente {
+    - id: Long
+    - nome: String
+    - CPF/CNPJ: String
+    - Endereco: String
+    - CEP: String
+    - Numero: String
+    - Complemento: String
+}
+
+class Veiculo {
+    - id: Long
+    - placa: String
+    - modelo: String
+    - anoModelo: Integer
+    - cliente: Cliente
+}
+
+class OrdemServico {
+    - id: Long
+    - dataEmissao: LocalDate
+    - valorTotal: Double
+    - veiculo: Veiculo
+    - mecanicos: List<Mecanico>
+    - servicos: List<Servico>
+    - itensPeca: List<ItemPeca>
+}
+
+class Mecanico {
+    - id: Long
+    - nome: String
+}
+
+class Servico {
+    - id: Long
+    - descricao: String
+    - valor: Double
+}
+
+class Peca {
+    - id: Long
+    - nome: String
+    - precoUnitario: Double
+}
+
+class ItemPeca {
+    - id: Long
+    - quantidade: Integer
+    - peca: Peca
+    - ordemServico: OrdemServico
+}
+
+class ItemServico {
+    - id: Long
+    - quantidade: Integer
+    - peca: Peca
+    - ordemServico: OrdemServico
+}
+
+
+Cliente "1" -- "0..*" Veiculo : proprietario >
+Veiculo "1" -- "0..*" OrdemServico : gera >
+OrdemServico "0..*" -- "1..*" Mecanico : executada por >
+OrdemServico "0..*" -- "1..*" Servico : inclui >
+OrdemServico "1" -- "0..*" ItemPeca : contem >
+Peca "1" -- "0..*" ItemPeca : registrada em >
+OrdemServico "1" -- "0..*" ItemServico : contem >
+Servico "1" -- "0..*" ItemServico : registrada em >
+
+@enduml

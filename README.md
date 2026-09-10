@@ -9,3 +9,10 @@ Repositório Git com os seguintes artefatos inspirados em um potencial projeto d
 > 4. Notebook Jupyter: testes interativos da camada de persistência, avaliando o funcionamento da camada de persistência.
 > Use ORMLite, JPA ou outro framework compatível com a linguagem utilizada (Python ou Java)
 > Este exercício pode ser realizado em laboratório por até 5 membros. Caso seja realizado parcialmente entregue parcial do que foi desenvolvido até no final da aula o arquivo .zip do download do projeto. Caso tenha pendências, o restante deve ser entregue individualmente.
+
+---
+
+### DOMÍNIO - OFICINA MECÂNICA
+
+### LINGUAGEM - JAVA
+
