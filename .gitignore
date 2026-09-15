@@ -1,0 +1,16 @@
+target/
+data/
+*.db
+*.mv.db
+*.trace.db
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+*.class
+mise.toml

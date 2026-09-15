@@ -36,3 +36,34 @@ Marcello Ronald - 202302618
 ### Diagrama Entidade Relacionamento
 
 ![Diagrama Entidade Relacionamento](https://github.com/mronaldjs/SPD-BES-2026-2-ORM-PROJETO/blob/main/docs/diagrams/ER/diagramER.png)
+
+### Camada de persistência (JPA / Hibernate)
+
+Código-fonte das entidades mapeadas conforme o diagrama E-R, com DAOs e banco H2.
+
+```
+src/main/java/br/ufg/oficina/
+├── model/          # Cliente, Veiculo, OrdemServico, NotaFiscal, Mecanico, Servico, Peca, Item*
+├── dao/            # GenericDao, ClienteDao, OrdemServicoDao
+├── util/JPAUtil.java
+└── Main.java       # demonstração das relações 1:N, 1:1 e N:M
+```
+
+Requisitos: **JDK 21+** e **Maven 3.9+**.
+
+```bash
+mvn compile exec:java
+```
+
+### Notebook Jupyter — testes interativos
+
+Arquivo: [`notebooks/testes_persistencia.ipynb`](notebooks/testes_persistencia.ipynb)
+
+Valida interativamente o mesmo esquema E-R (1:N, 1:1 e N:M) com SQLAlchemy.
+
+```bash
+uv venv .venv
+uv pip install sqlalchemy jupyter ipykernel
+source .venv/bin/activate
+jupyter notebook notebooks/testes_persistencia.ipynb
+```
